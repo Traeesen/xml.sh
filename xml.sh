@@ -34,7 +34,7 @@ while [ $# -gt 0 ]; do
             ;;
         -set)
             if [ $# -lt 3 ]; then
-                echo "Parametri invalizi"
+                echo "Parametrii invalizi"
                 exit 1
             fi
 
@@ -45,16 +45,16 @@ while [ $# -gt 0 ]; do
             ;;
         -get)
             if [ $# -lt 2 ]; then
-                echo "Parametri invalizi"
+                echo "Parametrii invalizi"
                 exit 1
             fi
             tag="$2"
-            ./get.sh "$file" "$tag"
+            ./prettify.sh "$file" | ./get.sh "$tag"
             shift 2
             ;;
        -insert)
             if [ $# -lt 3 ]; then
-                echo "Parametri invalizi"
+                echo "Parametrii invalizi"
                 exit 1
             fi
             item="$2"
@@ -73,6 +73,3 @@ while [ $# -gt 0 ]; do
 done
 
 exit 1
-
-
-
